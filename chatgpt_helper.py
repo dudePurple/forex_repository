@@ -9,7 +9,7 @@ messages = [
 ]
 
 
-def get_answer(question):
+def get_answer(question: str):
     if not openai.api_key:
         reply = DEFAULT_ANSWER
     else:
