@@ -10,10 +10,8 @@ templates = Jinja2Templates(directory="templates")
 
 def generate_answer(question: str):
     supporter = Supporter(question, faqs_filename='FAQ_cleaned.json')
-    question_obj = supporter.find_answer()
-    if question_obj != Supporter.NOT_FOUND:
-        answer = question_obj.get('Answer_plain_text')
-    else:
+    answer = supporter.find_answer()
+    if answer == Supporter.NOT_FOUND:
         answer = chatgpt_answer(question)
 
     return answer
