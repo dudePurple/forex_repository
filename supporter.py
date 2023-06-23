@@ -106,7 +106,7 @@ class Supporter:
                 faq_object.get('Question_short_alternatives', []))
 
     @staticmethod
-    def remove_stopwords(sentence):
+    def remove_stopwords(sentence: str):
         """
         For some combined keywords (e.g. 'hello world) actual match in user question can be
         'hello the world' or 'hello a world'. This method removes such constructions from user question
