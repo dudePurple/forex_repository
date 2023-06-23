@@ -43,10 +43,10 @@ class Supporter:
         matching_faqs = []
         for faq_obj in self.faqs:
             keywords = faq_obj.get('Keywords', [])
-            split_counter = 0  # counts how many actual words of keywords were matched
-            # (e.g. keyword is 'hello world' if question contains only hello we still need to count it  
-            counter = 0  # counts how many full keywords were matched 
-            # counts only if full 'hello world' was found
+            # counts how many actual words of keywords were matched (e.g. keyword is 'hello world' if question contains only hello we still need to count it)
+            split_counter = 0
+            # counts how many full keywords were matched (only if full 'hello world' was found in user question)
+            counter = 0  
             matched = False
             for keyword in keywords:
                 keyword = keyword.lower()
