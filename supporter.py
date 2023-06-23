@@ -90,7 +90,7 @@ class Supporter:
 
         if similarities and max(similarities) >= self.SIMILARITY_THRESHOLD:
             return matching_faqs[max(enumerate(similarities),
-                                     key=lambda x: x[1])[0]]
+                                     key=lambda x: x[1])[0]].get('Answer_plain_text')
         return self.NOT_FOUND
 
     @staticmethod
